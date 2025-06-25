@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+    <title>Flex box</title>
+     <style>
+        .brd{
+            border: 1px solid red;
+        }
+        
+        .flexContainer>div{
+            background-color: #f1f1f1;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        .flexContainer{
+            display:flex;
+            height: 200px;
+            /* flex-flow: row wrap-reverse; */
+            justify-content: center;
+            align-items: center;
+
+            background-color: dodgerblue;
+        }
+
+
+    </style>
+   
+</head>
+    <body> 
+        <div>
+            <h3>Flex</h3>
+
+            <ul>
+                <li>To Use flexbox</li>
+                Use display:flex
+                <li>Css properties for flexbox</li>
+                1:flex-direction: column, row, column-reverse, row-reverse <br>
+                2:flex-wrap: nowrap, wrap, wrap-reverse <br>
+                3:flex-flow: shorthand for both flexi-direction and flex-wrap :: flex-flow: row wrap<br>
+                4:justify-content: center, flex-start, flex-end, space-around, space-between, space-evenly <br>
+                5:align-items: center, flex-start, flex-end, stretch, baseline, normal <br>
+                6:align-content: center, stretch, flex-start, flex-end, space-around, space-between, space-evenly,  <br>
+
+                7:flex-items: order, flex-grow, flex-shrink, flex-basis, flex, align-self
+            </ul>
+
+        </div>
+
+        <div class="flexContainer" >
+           
+            <div class="brd">1</div>
+            <div class="brd">2</div>
+            <div class="brd">3</div>
+
+             <div class="brd">4</div>
+            <div class="brd">5</div>
+            <div class="brd">6</div>
+
+             <div class="brd">7</div>
+            <div class="brd">8</div>
+            <div class="brd">9</div>
+
+            <div class="brd">10</div>
+            <div class="brd">11</div>
+            <div class="brd" style="flex-grow: 10;">12</div>
+
+        </div>
+
+    </body>
+</html>

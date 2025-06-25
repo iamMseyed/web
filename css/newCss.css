@@ -1,0 +1,147 @@
+body {
+    background-color: lightblue;
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }
+
+  p.center {
+    text-align: center;
+    color: red;
+  }
+
+  * {
+    text-align: center;
+    color: blue;
+  }
+
+  h1, h2, p {
+    text-align: center;
+    color: red;
+  }
+
+  .bgColor{
+    background-color: red;
+    color: white;
+  }
+.opacityCheck {
+    background-color: green;
+    opacity: 0.3;
+    color: black;
+  }
+
+.bgImage{
+    background-image: url('../assets/img2.jpeg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* background-attachment: scroll; */
+}
+.brdr{
+    border-left: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+  }
+/* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
+
+a:link {
+  background-color: yellow;
+}
+
+a:visited {
+  background-color: cyan;
+}
+
+a:hover {
+  background-color: lightgreen;
+}
+
+a:active {
+  background-color: hotpink;
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}
+
+ol.c {
+  list-style-type: upper-roman;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+table {
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) 
+{
+  background-color: #f2f2f2;
+}
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+
+div.container{
+  float: left;
+  padding: 10px;
+}

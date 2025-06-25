@@ -1,0 +1,144 @@
+ol,li,a{
+    color: black;
+    text-decoration: none;
+}
+ #tableDesign, #tableDesign tr, #tableDesign tr th, #tableDesign tr td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+#tableDesign tr:nth-last-child{
+    border-collapse:separate;
+}
+
+#tableDesignNew, #tableDesignNew tr, #tableDesignNew tr th, #tableDesignNew tr td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}
+
+.captionTable,.captionTable tr, .captionTable tr th, .captionTable tr td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}
+caption{
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#backIcon{
+    color: red; 
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+#backIcon:hover{
+    cursor: pointer;
+}
+li a{
+    font-weight: bold;
+}
+.newTab, .newTab tr, .newTab tr th, .newTab tr td{
+    border: 1px solid green;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+}
+ol li{
+    padding: 5px;
+}
+div.myContainer div{
+    width: 19%;
+    float: left;
+    padding: 5px;
+    text-align: justify;
+}
+div.myContainer h2{
+    text-decoration: underline;
+}
+div.inlineBlock{
+    width: 19%;
+    display: inline-block;
+    text-align: justify;
+    padding: 5px;
+}
+
+.flexContainer{
+    display: flex;
+}
+
+.flexContainer > div{
+    width: 20%;
+}
+.gridContainer{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.divide1{
+    display: flex;
+    width: 100%;
+}
+
+.divide1 >div{
+    width: 33%;
+}
+
+.divide1 .newDivide{
+    display: flex;
+    /* width: 1%; */
+}
+
+ .divide1 .newDivide{
+    width: 50%;
+ }
+
+.divide2{
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+
+.divide2 #divideAgain{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: red;
+}
+
+/*
+.divide3{
+    width: 100%;
+}
+.divide3 div{
+    width: 33%;
+    float: left;
+}
+    */
+.textStyle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+img:hover{
+    border-radius: 30%;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+}
+
+@media (max-width:768px) {
+    .grid-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width:480px) {
+    .grid-container{
+        grid-template-columns:1fr;
+    }
+}

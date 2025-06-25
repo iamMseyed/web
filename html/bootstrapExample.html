@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="../css/bootstrapcustom.css">
+  <!-- this works -->
+  <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function (){
+          document.getElementById("toastbtn").onclick = function() {
+          var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+          var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl)
+          })
+          toastList.forEach(toast => toast.show())
+        }
+        });
+    </script>
+
+  <!-- Adding js code here doesn't work with popover 
+    <script>
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+      })
+    </script> 
+  -->
+</head>
+<!-- Adding js code here doesn't work with popover either
+<script>
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+</script> -->
+<body>
+  
+<div class="container pt-3">
+  <h1>Responsive Containers</h1>
+  <p>Resize the browser window to see the effect.</p>
+</div>
+
+<div class="container">
+  <div class="container-sm border">.container-sm</div>
+  <div class="container-md mt-3 border">.container-md</div>
+  <div class="container-lg mt-3 border">.container-lg</div>
+  <div class="container-xl mt-3 border">.container-xl</div>
+  <div class="container-xxl mt-3 border">.container-xxl</div>  
+</div>
+
+<hr>
+
+<div class="container mt-3">
+  <h1>Two Unequal Responsive Columns</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
+  <div class="row">
+    <div class="col-sm-4 p-3 bg-primary text-white">.col</div>
+    <div class="col-sm-8 p-3 bg-dark text-white">.col</div>
+  </div>
+</div>
+
+<hr>
+<div class="container">
+  <div class="display-1">Display-1</div>
+<div class="display-6">Display-6</div>
+<small>small</small>
+<abbr title="Who Is This"> WIT</abbr>
+
+<span>There is no<mark> I </mark> in a Team</span>
+<div class="text-muted">Hello how are you</div>
+<div class="text-primary">Hello how you doin!</div>
+<div class="text-warning">Hello how you!</div>
+<div class="text-secondary">Hello how you doin!</div>
+<div class="text-success">Hi how are you!</div>
+<div class="text-danger">Hey!</div>
+<div class="h1">Hi</div>
+<div class="text-white-50">Text Black 50</div>
+
+<div class="bg-primary">Backgroud primary</div>
+<div class="bg-secondary">Backgroud secondary</div>
+<div class="bg-success">Background success</div>
+<div class="bg-warning">Background Warning</div>
+<div class="bg-danger">Background danger</div>
+<div class="bg-dark text-white">Background Dark</div>
+<div class="bg-light">Background Light</div>
+<div class="text-bg-dark">Background with auto color</div>
+<hr>
+
+<!-- Table -->
+
+<!-- <table class="container table table-striped table-bordered table-hover table-dark table-borderless"> -->
+<table class="container table table-bordered table-hover">
+    <thead> 
+        <tr class="table-primary">
+            <th>Col1</th>
+            <th>Col2</th>
+            <th>Col3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th class="table-warning">1</th>
+            <th class="table-success">2</th>
+            <th class="table-danger">3</th>
+        </tr>
+         <tr>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+</div>
+
+<div class="container-fluid" id="abc">
+    <img src="../assets/img4.jpeg" alt="img1" class="img-fluid rounded float-start">
+    <img src="../assets/img3.jpeg" alt="img2" class="img-fluid rounded-circle float-end">
+    <img src="../assets/img2.jpeg" alt="img3" class="img-fluid  img-thumbnail mx-auto d-block">
+</div>
+
+<hr>
+<!-- Alerts -->
+
+<div class="container">
+  <div class="container alert alert-success">Yes!</div>
+<div class="container alert alert-warning">May be</div>
+<div class="container alert alert-danger">No</div>
+</div>
+
+
+<hr>
+
+<div class="container alert alert-success alert-dismissible">
+  <button type="button"  class="btn-close pointer" data-bs-dismiss="alert"></button>
+  <strong>Success!</strong> This alert box could indicate a successful or positive action.
+</div>
+
+<hr>
+
+<div class="container-sm mb-3">
+  <h1 class="h2 text-center">Buttons</h1>
+  <button type="button" class="btn btn-primary btn-outline-dander btn-sm"> Button Primary </button>
+  <button type="button" class="btn btn-secondary btn-lg">Button Secondary</button>
+  <button class="btn btn-danger" >Button Dander</button>
+  <input type="text"  class="btn btn-warning bg-white" value="submit button"> 
+</div>
+
+<div class="container mb-3 d-grid gap-1" id="abcd">
+  <button class="btn btn-primary text-black ">Button1 </button>
+  <button type="button" class="btn btn-sm btn-primary"> Button2</button>
+</div>
+
+<div class="container mb-2">
+  <button type="button" class="btn btn-sm" disabled> Disabled Button</button>
+  <button type="button" class="btn btn-sm btn-success">Enabled Button</button>
+  <a href="#abc" class="btn btn-warning disabled">Anchor tag disabled</a>
+  <a href="#abcd" class="btn btn-secondary">Anchor Tag </a>
+</div> 
+
+<div class="container mb-2">
+  <button class="btn btn-primary">
+    <span class="spinner-border spinner-border-sm"></span>
+  </button>
+  <button class="btn btn-secondary">
+    <span class="spinner-border spinner-border-sm"></span>
+    Loading
+  </button>
+  <button class="btn btn-success">
+    <span class="spinner-grow spinner-grow-sm"></span>
+  </button>
+<button class="btn btn-primary" disabled>
+  <span class="spinner-grow spinner-grow-sm"></span>
+  Loading..
+</button>
+</div>
+
+<div class="container mb-3">
+
+  
+<div class="btn-group btn-group-sm">
+  <button class="btn btn-primary">BtnPrimary</button>
+  <button class="btn btn-warning">BtnWarning</button>
+</div>
+</div>
+
+<div class="container mb-3">
+  <div class="btn-group-vertical">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  <button type="button" class="btn btn-primary">Sony</button>
+</div>
+
+<div class="container m-3">
+ <div class="btn-group">
+  <button type="button" class="btn btn-primary">Apple</button>
+  <button type="button" class="btn btn-primary">Samsung</button>
+  
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Nokia</button>
+    <div class="dropdown-menu">
+       <a class="dropdown-item" href="#">Tablet</a>
+      <a class="dropdown-item" href="#">Smartphone</a>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</div>
+
+<hr>
+  <div>
+    <div class="container">
+      <h1>Badges Example</h1>
+      <h1>Example heading <span class="badge bg-secondary">New</span></h1>
+    <h2>Example heading <span class="badge bg-secondary">New</span></h2>
+    <h3>Example heading <span class="badge bg-secondary">New</span></h3>
+    <h4>Example heading <span class="badge bg-secondary">New</span></h4>
+    <h5>Example heading <span class="badge bg-secondary">New</span></h5>
+    <h6>Example heading <span class="badge bg-secondary">New</span></h6>
+
+
+    <span class="badge bg-primary">Primary</span>
+    <span class="badge bg-secondary">Secondary</span>
+    <span class="badge bg-success">Success</span>
+    <span class="badge bg-danger">Danger</span>
+    <span class="badge bg-warning">Warning</span>
+    <span class="badge bg-info">Info</span>
+    <span class="badge bg-light">Light</span>
+    <span class="badge bg-dark">Dark</span>
+    <br>
+    <span class="badge rounded-pill bg-primary">Primary</span>
+    <span class="badge rounded-pill bg-secondary">Secondary</span>
+    <span class="badge rounded-pill bg-success">Success</span>
+    <span class="badge rounded-pill bg-danger">Danger</span>
+    <span class="badge rounded-pill bg-warning">Warning</span>
+    <span class="badge rounded-pill bg-info">Info</span>
+    <span class="badge rounded-pill bg-light">Light</span>
+    <span class="badge rounded-pill bg-dark">Dark</span>
+ <br>
+    <button type="button" class="btn btn-sm btn-primary mt-3">
+       Messages <span class="badge bg-danger">4</span>
+    </button>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container mb-3" id="spinner">
+    <div class="spinner-border"></div>
+    <div class="spinner-grow"></div>
+
+    <div class="spinner-border text-muted"></div>
+    <div class="spinner-border text-primary"></div>
+    <div class="spinner-border text-success"></div>
+    <div class="spinner-border text-info"></div>
+    <div class="spinner-border text-warning"></div>
+    <div class="spinner-border text-danger"></div>
+    <div class="spinner-border text-secondary"></div>
+    <div class="spinner-border text-dark"></div>
+    <div class="spinner-border text-light"></div>
+
+
+    <div class="spinner-border spinner-border-sm"></div>
+    <div class="spinner-grow spinner-grow-sm"></div>
+
+    <button class="btn btn-primary">
+  <span class="spinner-border spinner-border-sm"></span>
+</button>
+
+<button class="btn btn-primary">
+  <span class="spinner-border spinner-border-sm"></span>
+  Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+  <span class="spinner-border spinner-border-sm"></span>
+  Loading..
+</button>
+
+<button class="btn btn-primary" disabled>
+  <span class="spinner-grow spinner-grow-sm"></span>
+  Loading..
+</button>
+  </div>
+
+  <hr>
+  <div class="container mt-3" id="pagination">
+    
+    <h1 class="text-center"> Pagination </h1>
+    <ul class="pagination pagination-sm justify-content-end allign-items-left">
+      <li class="page-item disabled"><a href="#pagination" class="page-link">Previous</a></li>
+      <li class="page-item active"><a href="#pagination" class="page-link">1</a></li>
+      <li class="page-item"><a href="#pagination" class="page-link">2</a></li>
+      <li class="page-item"><a href="#pagination" class="page-link">3</a></li>
+      <li class="page-item"><a href="#pagination" class="page-link">Next</a></li>
+    </ul>
+
+    <ul class="breadcrumb" id="breadcrumb">
+      <li class="breadcrumb-item"><a href="#breadcrumb" class="breadcrumb-link">Home</a></li>
+      <li class="breadcrumb-item"><a href="#breadcrumb" class="breadcrumb-link">Photos</a></li>
+      <li class="breadcrumb-item"><a href="#breadcrumb" class="breadcrumb-link">Albums</a></li>
+      <li class="breadcrumb-item"><a href="#breadcrumb" class="breadcrumb-link active">abc</a></li>
+    </ul>
+  </div>
+
+  <div class="container mt-3">
+    <h3 class="text-center">Cards</h3>
+    <div class="row">
+
+      <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">
+                Card Example
+              </div>
+                <p class="card-text">Card Text </p>
+                <a href="" class="card-link"> Card Link 1</a>
+                <a href="" class="card-link">Card Link 2</a>
+              </div>
+            </div>
+      </div>
+       <div class="col-sm-4 mb-1">
+           <div class="card">
+            <img src="../assets/img3.jpeg" max-width="100%" height="100%" class="card-img-top">
+              <div class="card-body">  
+                <div class="card-title">
+                Card Example
+              </div>
+                <p class="card-text">Card Text </p>
+                <button class="btn btn-sm btn-primary">Update Profile</button>
+                <button class="btn btn-sm btn-danger">Delete Profile</button>
+              </div>
+              </div>
+            </div>
+
+      <div class="col-sm-4 mb-1">
+           <div class="card">
+            <img src="../assets/img3.jpeg" max-width="100%" height="100%" class="card-img-top">
+            <div class="card-img-overlay">
+              <div class="card-body">  
+                <div class="card-title">
+                Card Example
+              </div>
+                <p class="card-text">Card Text </p>
+                <button class="btn btn-sm btn-primary">Update Profile</button>
+                <button class="btn btn-sm btn-danger">Delete Profile</button>
+              </div>
+            </div>
+              </div>
+            </div>
+    </div>
+  </div>
+
+  <hr>
+  
+ <div class="container">
+   <div class="row">
+    <div class="col-sm-4">
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          Dropdown menu
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="" class="dropdown-item">Link</a></li>
+          <li><button class="dropdown-item">Button</button></li>
+          <li><span class="dropdown-item">Span Text</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="col-sm-4 mb-2">
+      <div class="dropstart">
+        <button class="btn disabled dropdown-toggle" data-bs-toggle="dropdown">
+          Dropdown menu
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="" class="dropdown-item">Link</a></li>
+          <li><button class="dropdown-item">Button</button></li>
+          <li><span class="dropdown-item">Span Text</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <div class="dropup">
+        <button class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown">
+          Dropdown menu
+        </button>
+        <ul class="dropdown-menu">
+          <li><h5 class="dropdown-header text-center">Links</h5></li>
+          <li><a href="" class="dropdown-item">One</a></li>
+          <li><a href="" class="dropdown-item active">Two</a></li>
+          <li><h5 class="dropdown-header text-center">Button</h5></li>
+          <li><button class="dropdown-item">One</button></li>
+          <li><button class="dropdown-item disabled">Two</button></li>
+          <li><hr class="dropdown-divider"></hr></li>
+          <li><span class="dropdown-item">Span Text</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <hr>
+
+ <div class="container-fluid mb-3">
+  <h3 class="text-center">Collapse</h3>
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3">
+
+      <div class="btn btn-primary disabled" data-bs-toggle="collapse"  data-bs-target="#click4">Click Me </div>
+     
+      <div class="collapse" id="click4">
+         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fugiat adipisci facilis optio expedita nihil enim non blanditiis autem distinctio minus ipsum, quaerat possimus vero obcaecati facere, reiciendis, culpa debitis?</p>
+      </div>
+    
+    </div>
+     <div class="col-sm-3">
+      <a href="#demo" data-bs-toggle="collapse">Collapsible</a>
+        <div id="demo" class="collapse">
+          Lorem ipsum dolor text....
+        </div>
+    </div>
+    <div class="col-sm-2">
+      
+      <div class="btn btn-primary" data-bs-toggle="collapse"  data-bs-target="#click5">Click Me </div>
+     
+      <div class="collapse" id="click5">
+         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fugiat adipisci facilis optio expedita nihil enim non blanditiis autem distinctio minus ipsum, quaerat possimus vero obcaecati facere, reiciendis, culpa debitis?</p>
+      </div>
+    </div>
+  </div>
+ </div>
+
+ <hr>
+   
+ <div class="col-sm-12">
+      <h3 class="text-center">Accordion</h3>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header">
+              <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                Collapsible Group Item #1
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum..
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                Collapsible Group Item #2
+              </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum..
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                Collapsible Group Item #3
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                Lorem ipsum..
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-sm-12 col-lg-4"></div>
+      <div class="col-sm-12 col-lg-4"><h3 class="text-center">Bootstrap Forms</h3></div>
+      <div class="col-sm-12 col-lg-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-lg-4">
+        <h2>row - col type</h2>
+        <form>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Enter email" name="email">
+            </div>
+            <div class="col">
+              <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+            </div>
+          </div>
+
+          <input type="text" class="form-control form-control-lg" placeholder="Large input">
+          <input type="text" class="form-control" placeholder="Normal input">
+          <input type="text" class="form-control form-control-sm" placeholder="Small input">
+          <input type="text" class="form-control form-control-lg" placeholder="Large input" disabled readonly value="disabled & readonly">
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked>
+          <label class="form-check-label">Option 1</label>
+        </div>
+         <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked>
+          <label class="form-check-label">Option 1</label>
+        </div>
+
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Option 1
+          <label class="form-check-label" for="radio1"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Option 2
+          <label class="form-check-label" for="radio2"></label>
+        </div>
+        <div class="form-check">
+          <input type="radio" class="form-check-input" disabled>Option 3
+          <label class="form-check-label"></label>
+        </div>
+        </form>
+      </div>
+      <div class="col-sm-12 col-lg-4">
+        <h3>simple</h3>
+        <form action="#submit" class="m-2" method="post">
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+            </div>
+            <div class="form-check mb-3">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+              </label>
+            </div>    
+                <label for="select">
+                  Select
+                </label>
+                <select class="form-select">
+                  <option>1</option>
+                  <option>2</option>
+                  <option disabled>3</option>
+                  <option>4</option>
+                </select>        
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </div>
+      <div class="col-sm-12 col-lg-4">
+        <h3>Others</h3>
+        <label for="comment">Comments:</label>
+            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+            <input type="color" class="form-control form-control-color" value="#CCCCCC">
+            <label for="browser" class="form-label">Choose your browser from the list:</label>
+            <input class="form-control" list="browsers" name="browser" id="browser">
+            <datalist id="browsers">
+              <option value="Edge">
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Opera">
+              <option value="Safari">
+            </datalist>
+
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+              <label class="form-check-label" for="mySwitch">Dark Mode</label>
+            </div>
+      </div>
+    </div>
+<hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <form>
+          <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Your Email">
+            <span class="input-group-text">@example.com</span>
+          </div>
+          <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input type="checkbox">
+              </div>
+              <input type="text" class="form-control" placeholder="Some text">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-text">
+                <input type="radio">
+              </div>
+              <input type="text" class="form-control" placeholder="Some text">
+            </div>
+
+             <div class="form-floating mb-2 mt-2">
+          <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+          <label for="email">Email</label>
+        </div>
+
+        <div class="form-floating mt-2 mb-2">
+          <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+          <label for="pwd">Password</label>
+        </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <form action="">
+          <div class="input-group mb-3 input-group-sm">
+            <span class="input-group-text">Small</span>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Default</span>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="input-group mb-3 input-group-lg">
+            <span class="input-group-text">Large</span>
+            <input type="text" class="form-control">
+          </div>
+
+          <div class="input-group mb-3">
+                <button class="btn btn-outline-primary" type="button">Basic Button</button>
+                <input type="text" class="form-control" placeholder="Some text">
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search">
+                <button class="btn btn-success" type="submit">Go</button>
+              </div>
+
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Something clever..">
+                <button class="btn btn-primary" type="button">OK</button>
+                <button class="btn btn-danger" type="button">Cancel</button>
+              </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <form action="">
+          <div class="input-group mb-3">
+              <span class="input-group-text">Person</span>
+              <input type="text" class="form-control" placeholder="First Name">
+              <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+
+            <!-- Multiple addons / help text -->
+            <div class="input-group mb-3">
+              <span class="input-group-text">One</span>
+              <span class="input-group-text">Two</span>
+              <span class="input-group-text">Three</span>
+              <input type="text" class="form-control">
+
+              <div class="input-group mt-3 mb-3">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                    Dropdown button
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                  </ul>
+                  <input type="text" class="form-control" placeholder="Username">
+                </div>
+          </div>
+          <div class="form-floating">
+              <select class="form-select" id="sel1" name="sellist">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+              <label for="sel1" class="form-label">Select list (select one):</label>
+            </div>
+        </form>
+      </div>
+    </div>
+
+    <hr>
+<!-- Validation -->
+    <div class="row">
+
+      <div class="col-sm-12">
+            <form action="/action_page.php" class="was-validated">
+              <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Username:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+                <label class="form-check-label" for="myCheck">I agree on blabla.</label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Check this checkbox to continue.</div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+      </div>
+
+
+    </div>
+  </div>
+<!-- navs -->
+
+<!-- horizontal nav bar -->
+  <hr>
+  <div class="container-fluid">
+    <h3 class="text-center">Navs</h3>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+          <h4>Horizontal Nav Bar</h4>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="" class="nav-link">Link 1</a>
+          </li>
+  
+          <li class="nav-item">
+            <a href="" class="nav-link">Link 2</a>
+          </li>
+    
+          <li class="nav-item">
+            <a href="" class="nav-link disabled">Link 3</a>
+          </li>
+        </ul>
+      </div>
+      
+       <!-- vertical nav  -->
+      <div class="col-sm-3">
+       <h4>Vertical Nav Bar</h4>
+       <ul class="nav flex-column"> <!-- vertical nav -->
+        <li class="nav-item"><a href="" class="nav-link">Link 1</a></li>
+        <li class="nav-item"><a href="" class="nav-link disabled">Link 2</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Link 3</a></li>
+       </ul>
+      </div>
+<!-- nav bar as tabs -->
+      <div class="col-sm-3">
+        <h4>Nav Bar as Tabs</h4>
+        <ul class="nav nav-tabs" id="navBarTab">
+          <li class="nav-item">
+            <a class="nav-link" href="#navBarTab">Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#navBarTab">Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#navBarTab">Link 3</a>
+          </li>
+        </ul>
+      </div>
+<!-- nav pils -->
+      <div class="col-sm-3">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+      </div>
+
+      <div class="col-sm-6">
+        <h4>Nav Tabs</h4>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu2">Menu 2</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane container active" id="home">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, ex quam neque</div>
+          <div class="tab-pane container fade" id="menu1"> vero qui esse laboriosam repellat, eos ipsam rerum velit tempora.</div>
+          <div class="tab-pane container fade" id="menu2">Aperiam inventore rerum numquam dolorem, velit temporibus amet</div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <!-- Nav pills -->
+         <h4>Nav Pills</h4>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" data-bs-toggle="pill" href="#home1">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="pill" href="#menu11">Menu 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="pill" href="#menu22">Menu 2</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane container active" id="home1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="tab-pane container fade" id="menu11">excepturi deserunt voluptas pariatur ratione assumenda nisi pariatur enim? </div>
+            <div class="tab-pane container fade" id="menu22">nulla voluptatum, asperiores officia excepturi repudiandae perferendis debitis.</div>
+          </div>
+      </div>
+    </div>
+  </div>
+<hr>
+<!-- Nav bar -->
+<div class="container-fluid">
+  <div class="row">
+    <h4 class="text-center">Navigation Bar</h4>
+    <hr>
+    <div class="col-sm-4">
+      <h4>Basic Nav Bar</h4>
+      <nav class="navbar navbar-expand-sm bg-light">
+      <div class="container-fluid">
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 3</a>
+          </li>
+        </ul>
+      </div>
+     </nav>
+    </div>
+
+    <div class="col-sm-4">
+      <h4>Vertical Nav Bar</h4>
+      <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+    
+    <div class="col-sm-4">
+      <h4>Brand Logo</h4>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/img2.jpeg" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+        </a>
+      </div>
+    </nav>
+    </div>
+    
+  </div>
+</div>
+
+<hr>
+<!-- Carousel -->
+<div class="container">
+  <div class="row">
+    <h4>Carousel</h4>
+    <hr>
+    <div class="col-sm-12">
+      <!-- Carousel -->
+      <div id="demoabc" class="carousel slide" data-bs-ride="carousel" >
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demoabc" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demoabc" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demoabc" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../assets/img1.jpeg" alt="Los Angeles" class="d-block w-100" >
+            <div class="carousel-caption">
+              <h3>Sshfhakjs </h3>
+              <p>lkjslkfjlks ljlkjf dslkjfds</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img2.jpeg" alt="Chicago" class="d-block w-100">
+            <div class="carousel-caption">
+              <h3>dshfajslkjfds</h3>
+              <p>We had such a great time in LA!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img3.jpeg" alt="New York" class="d-block w-100">
+            <div class="carousel-caption">
+              <h3>dsflsajf </h3>
+              <p>We had ;ldskfjsaA!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demoabc" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demoabc" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+          </div>
+  </div>
+</div>
+
+
+
+ <hr>
+ <!-- Modal -->
+<div class="container">
+  <div class="row">
+   
+  <div class="col-sm-6">  <h4 class="text-center">Modal</h4></div>
+  <div class="col-sm-6 mb-2">
+      <!-- Button to Open the Modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        Open modal
+      </button>
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog"> <!-- " .modal-dialog-scrollable modal-dialog-centered modal-fullscreen" -->
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">This is modal heading</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              This is the modal body.
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+        </div>
+  </div>
+</div>
+
+Tooltip
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3 class="text-center">Tooltip</h3>
+    </div>
+    <div class="col-sm-6">
+      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="down" title="This is tooltip example!">
+        Hover over me!
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Popover -->
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3 class="text-center">Popover</h3>
+    </div>
+    <div class="col-sm-4" id="popover">
+      <button type="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Some content inside the popover">
+        Click for popover</button>
+    </div>
+    <div class="col-sm-4">
+        <button type="button" class="btn btn-primary" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="Some content inside the popover">
+          Hover for popover
+      </button>
+    </div>
+  </div>
+</div>
+<hr>
+
+<!-- Toast -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Toast</h3>
+    </div>
+    <div class="col-sm-4">
+      <h5>simple toast</h5>
+      <div class="toast show">
+        <div class="toast-header">
+          Toast Header
+          <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+          Some text inside the toast body
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+       <button type="button" class="btn btn-primary" id="toastbtn">Show Toast</button>
+  
+        <div class="toast">
+          <div class="toast-header">
+            <strong class="me-auto">Toast Header</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+          </div>
+          <div class="toast-body">
+            <p>Some text inside the toast body</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+
+<!-- Adding this script here works popover -->
+<!-- <script>
+  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+  })
+</script> -->
+
+<!--Adding this script here works toast here OR either move to top and add domcontentloaded -->
+<!-- <script>
+        document.getElementById("toastbtn").onclick = function() {
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+          return new bootstrap.Toast(toastEl)
+        })
+        toastList.forEach(toast => toast.show())
+        }
+</script> -->
+</body>
+</html>

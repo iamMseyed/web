@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Example</title>
+    <style>
+
+        /* static */
+        .static-box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: static; /* Default positioning */
+        }
+
+        /* relative */
+          .relative-box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            position: relative;
+            top: 20px; /* Move down by 20px */
+            left: 10px; /* Move right by 10px */
+          }
+
+         /*  Absolute*/
+            .container {
+               position: relative;
+               width: 200px;
+               height: 200px;
+               left: 20px;
+               background-color: lightgray;
+          }
+         .absolute-box {
+            width: 100px;
+            height: 100px;
+            background-color: lightgreen;
+            position: absolute;
+            top: 20px; /* 20px from top of positioned ancestor */
+            left: 20px; /* 20px from left of positioned ancestor */
+        }
+
+        /* fixed */
+          .fixed-box {
+            width: 100px;
+            height: 100px;
+            background-color: lightgoldenrodyellow;
+            position: fixed;
+            top: 20px; /* 20px from top of viewport */
+            left: 20px; /* 20px from left of viewport */
+            z-index: 1000;
+        }
+
+        /* sticky */
+         .sticky-box {
+            width: 100%;
+            height: 50px;
+            background-color: lightpink;
+            position: sticky;
+            top: 0; /* Stick to top of the viewport */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="static-box">Static</div>
+    <div class="relative-box">relative</div>
+    <div class="container"> containerAbsolute
+        <div class="absolute-box">absolute</div>
+    </div>
+    <div class="fixed-box">fixed</div>
+
+     <div class="sticky-box">Sticky Header</div>
+    <div style="height: 200vh; background-color: lightblue;" ></div>
+</body>
+</html>

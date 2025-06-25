@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zIndex</title>
+    <link rel="stylesheet" href="../css/newCss.css  ">
+
+    <style>
+        .zIndex1{
+            position: absolute;
+            top: 10;
+            left: 30;
+            height: 200x;
+            width: 200px;
+            background-color: red;
+            z-index: 2;
+        }
+
+         .zIndex2{
+            position: absolute;
+            top: 10;
+            left: 30;
+            height: 200x;
+            width: 200px;
+            z-index: 1;
+            background-color: black;
+        }
+         div.overflow {
+            width: 200px;
+            height: 65px;
+            background-color: coral;
+            overflow: visible;
+        }
+        div.hidden{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            overflow: hidden;
+        }
+    
+         div.scroll{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            overflow: scroll;
+        }
+
+         div.auto{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            overflow: auto;
+        }
+
+          div.xy{
+           width: 100px;
+            height: 100px;
+            background-color: red;
+            overflow-x: scroll; /* Hide horizontal scrollbar */
+            overflow-y: scroll; /* Add vertical scrollbar */
+        }
+
+    </style>
+    <body>
+        <!-- <div class="zIndex1"> 
+            <p>this is first zIndex</p>
+        </div>
+        <div class="zIndex2">
+            <p>This is second zIndex</p>
+        </div>
+         -->
+        <div>
+        <div class="container">
+            <div class="overflow">
+                <b>Text with overflow: visible<br></b>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur a, eum exercitationem recusandae temporibus laborum quam beatae ipsam nam molestiae similique laudantium nulla commodi eaque reiciendis in dolorum! Repudiandae, eius.
+            </div>
+        </div>
+        
+         <div class="container">
+            <div class="hidden" >
+                <b>text with overflow: hidden<br></b>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur a, eum exercitationem recusandae temporibus laborum quam beatae ipsam nam molestiae similique laudantium nulla commodi eaque reiciendis in dolorum! Repudiandae, eius.
+            </div>
+        </div>
+
+         <div class="container">
+            <div class="scroll">
+                <b>text with overflow: hidden<br></b>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            </div>
+        </div>
+
+        <div class="container">
+             <div class="auto">
+                <b>text with overflow: hidden<br></b>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, enim aspernatur! Libero, optio praesentium atque adipisci quis totam? Inventore, facere sint. Exercitationem quae quis, labore sed delectus eius rerum doloribus.
+                Magni, voluptatum ipsam numquam quae non, quod similique necessitatibus earum quo molestiae dignissimos, incidunt optio. Minus ab molestiae inventore sunt facilis corrupti enim totam obcaecati assumenda labore, mollitia sequi ipsa.
+                Reiciendis, quasi aliquid! Consectetur ducimus suscipit aliquam blanditiis, odio dolor tenetur. Praesentium natus, voluptate ullam ad sapiente, reprehenderit quidem quam enim quisquam delectus aliquid quia autem ab quae eaque eos.
+            </div>
+        </div>
+
+
+         <div class="container">
+             <div class="xy">
+                <b>text with overflow: hidden<br></b>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi, enim aspernatur! Libero, optio praesentium atque adipisci quis totam? Inventore, facere sint. Exercitationem quae quis, labore sed delectus eius rerum doloribus.
+                Magni, voluptatum ipsam numquam quae non, quod similique necessitatibus earum quo molestiae dignissimos, incidunt optio. Minus ab molestiae inventore sunt facilis corrupti enim totam obcaecati assumenda labore, mollitia sequi ipsa.
+                Reiciendis, quasi aliquid! Consectetur ducimus suscipit aliquam blanditiis, odio dolor tenetur. Praesentium natus, voluptate ullam ad sapiente, reprehenderit quidem quam enim quisquam delectus aliquid quia autem ab quae eaque eos.
+            </div>
+        </div>
+              
+         <div class="container">
+             <div style="width: 200px;" class="scroll">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia assumenda ut tempore odio expedita, ipsa saepe laboriosam. Saepe maiores dolor, dignissimos aut pariatur modi sapiente eveniet, ipsam aliquam doloribus repellendus.
+            </div>
+        </div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        .left, .right {
+          float: left;
+          width: 18%; /* The width is 20%, by default */
+        }
+        
+        .main {
+          float: left;
+          width: 60%; /* The width is 60%, by default */
+        }
+        
+        /* Use a media query to add a breakpoint at 800px: */
+        @media screen and (max-width: 800px) {
+          .left, .main, .right {
+            width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          }
+        }
+        </style>
+</head>
+<body>
+    <div class="left" style="background-color: aqua;">
+        left
+    </div>
+
+    <div class="main" style="background-color: bisque;">
+        main
+    </div>
+
+
+    <div class="right" style="background-color: blueviolet;">
+        right
+    </div>
+
+    <div>
+        <img src="../assets/imga1.jpeg" style="max-width:100%;">
+    </div>
+        <picture>
+            <source srcset="../assets/img3.jpeg" media="(max-width: 600px)">
+            <source srcset="../assets/img2.jpeg" media="(max-width: 1500px)">
+            <source srcset="../assets/img1.jpeg">
+            <img src="../assets/img3.jpe4" alt="Flowers">
+          </picture>
+</body>
+</html>

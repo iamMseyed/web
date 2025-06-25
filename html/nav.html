@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Navigation Menu
+        </title>
+    </head>
+
+    <style>
+        ul li{
+            list-style-type: none;
+            padding: 5px;
+        }
+        ul li > a{
+            background-color: #f2f2f2;
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        ul li a{
+            text-decoration: none;
+        }
+
+        li a{
+            display: block;
+            width: 60px;
+        }
+
+        .active {
+             background-color: #04AA6D;
+            color: white;
+            }
+        a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+    </style>
+    <body>
+     <ul>
+        <li><a class="active" href="default.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+      </ul>
+    </body>
+</html>

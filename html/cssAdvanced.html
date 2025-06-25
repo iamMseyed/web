@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#rcorners3 {
+  border-radius: 25px;
+  background: url('../assets/img4.jpeg');
+  /* background-position: left top; */
+  background-repeat: repeat;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+ #example1 { /* background image */
+  background-image: url("../assets/img2.jpeg"), url("../assets/img3.jpeg");
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+  /* background-size: 100px 80px; */
+  background-size: cover;
+}
+</style>
+</head>
+<body>
+
+<h1>The border-radius Property</h1>
+
+<p>Rounded corners for an element with a specified background color:</p>
+<p id="rcorners1">Rounded corners!</p>
+<p>Rounded corners for an element with a border:</p>
+<p id="rcorners2">Rounded corners!</p>
+<p>Rounded corners for an element with a background image:</p>
+<p id="rcorners3">Rounded corners!</p>
+
+<div id="example1">
+  <h1>Lorem Ipsum Dolor</h1>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+</div>
+</body>
+</html>

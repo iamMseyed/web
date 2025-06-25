@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/js/js1.js"></script>
+        
+    </head>
+    
+    <body>
+         <div class="container-fluid">
+            <div class="row">
+                <h3 class="text-center">
+                    Example 1
+                </h3>
+                <h3 id="demo"></h3>
+                <button type= "button" class="btn btn btn-primary" onclick="buttonCall()">Get Text </button>
+                <hr>
+                <h3>
+                    Example 2
+                </h3>
+                <h3 id="dem2"></h3>
+                <button type= "button"  class="btn btn btn-primary" onclick="b2()">Get Text </button>
+                
+                <hr>
+
+                <h3>
+                    Example 3
+                </h3>
+                <h3 id="d3"></h3>
+                <button type= "button"  class="btn btn btn-primary" onclick="b3()">Get Text </button>
+
+                 <hr>
+
+                <h3>
+                    Example 4
+                </h3>
+                <button type= "button" class="btn btn btn-primary" onclick="b4()">check Console </button>
+
+
+                <h3>Example 5</h3>
+                <button type="button" class="btn btn btn-primary" onclick="b5()">Document.write()</button>
+
+                <h3>Example 6</h3>
+                <button type="button" class="btn btn btn-primary"  onclick="b6()">Alert</button>
+
+                <h3>Example 7</h3>
+                <button type="button"  class="btn btn btn-primary" onclick="b7()">Console log</button>
+
+                <h3>Example 8</h3>
+                <button type="button"  class="btn btn btn-primary" onclick="b8()"> Load JS content</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="container-fluid">
+            <div class="row">
+                <h3 class="text-center"> var vs let vs const</h3>
+                <h3 id="varLetConst"></h3>
+                <pre>
+                    var x = 10;
+                    let y = 20;
+                    const z = 30;
+                    x=20; // this is ok
+                    y=30; // this is ok
+                    // z=40; // this is error
+                    var x=40; // this is ok, but it will not change the value of x outside this block 
+                    // let y=30; //  cannot redeclare y, but can change its value
+                </pre>
+                
+                <button type="button" class="btn btn btn-primary" onclick="varLetConst()">Check Console</button>
+            </div>
+        </div>
+
+        <hr>
+        <div class="container-fluid">
+            <div class="row">
+                <h3>Value is assigned to let variable, and using documnet.getElementById() : <span id="demoCar"></span></h3>
+                <button class="btn btn-primary" type="button" onclick="getValue()">Initiate script</button>
+                    <script>
+                        function getValue(){
+                            let carName = "Volvo";
+                    document.getElementById("demoCar").innerHTML = carName;
+                        }
+                    </script>
+
+                    <p> <pre> let x = 2 + 3 + "5"; <span id="addCheck"></span></pre></p>
+                     <button class="btn btn-danger" type="button" onclick="addCheck()">Addition of numbers and string</button>
+                     <script>
+                       function addCheck(){
+                            let x = 2 + 3 + "5";
+                            document.getElementById("addCheck").innerHTML = x;
+                        }
+                     </script>
+
+
+                    <p> <pre> let x = 2 + 3 - "5"; <span id="subCheck"></span></pre></p>
+                     <button class="btn btn-danger" type="button" onclick="subCheck()">Addition of numbers and string</button>
+                     <script>
+                       function subCheck(){
+                            let x = 2 + 3  - "5";
+                            document.getElementById("subCheck").innerHTML = x;
+                        }
+                     </script>
+            </div>
+        </div>
+       
+    </body>
+</html>

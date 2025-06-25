@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Dropdown
+    </title>
+<style>
+
+li {
+    list-style: none;
+    padding: 1px;
+    display: none;
+    width: 50px;
+    background-color: blueviolet;
+}
+
+li:hover {
+    background-color: aqua;
+}
+
+.display:hover + .displayTrue li{
+    display: block !important;
+}
+
+span:hover {
+  cursor: help;
+}
+</style>
+</head>
+<body>
+    <div>
+        Hover <span class="display">here</span> to see the options.
+        <ol class="displayTrue">
+            <li>This</li>
+            <li>Is</li>
+            <li>Us</li>
+        </ol>
+    </div>
+</body>
+</html>

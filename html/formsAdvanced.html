@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Forms</title>
+    <style>
+        .flexContainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: normal;
+        }
+        .formBody {
+            background-color: burlywood;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 100px auto;
+            max-width: 800px;
+        }
+        input[type="text"], input[type="password"], select, input[type="submit"], input[type="reset"], input[type="number"] {
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            border-bottom: 2px solid white;
+        }
+        input[type="submit"], select, input[type="reset"] {
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #61bd66;
+            border: none;
+            color: white;
+        }
+        input[type="submit"]:hover {
+            background-color: #4CAF50;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+            border: none;
+            color: white;
+        }
+        input[type="reset"]:hover {
+            background-color: #b83d10;
+        }
+        label {
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        input[type="text"]:hover, input[type="password"]:hover, select:hover {
+            border-bottom: 2px solid cyan;
+        }
+        @media (max-width: 600px) {
+            .flexContainer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .flexContainer label {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="formBody">
+        <h3 style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Signup Form</h3>
+        <form action="#">
+            <div class="flexContainer">
+                <label for="firstName">
+                    First Name <br>
+                    <input type="text" placeholder="Enter your first name" required>
+                </label> 
+
+                <label for="lastName">
+                    Last Name  <br> <input type="text" placeholder="Enter your last name" required>
+                </label> 
+            </div>   
+           
+            <div class="flexContainer">
+                <label for="email">
+                    Email  <br> <input type="text" placeholder="Enter your email" required>
+                </label>
+
+                <label for="phone">
+                    Phone Number  <br> <input type="number" placeholder="Enter your phone number" required>
+                </label> 
+            </div>
+            
+            <div class="flexContainer">
+                <label for="username">
+                    Username  <br> <input type="text" placeholder="Enter your username">
+                </label>
+
+                <label for="password">
+                    Password   <br> <input type="password" placeholder="Enter your password">
+                </label>  
+            </div> 
+            <div class="flexContainer">
+                <input type="reset" value="Reset">
+                <input  type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

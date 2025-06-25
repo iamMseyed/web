@@ -1,0 +1,10 @@
+.text-justify{
+    text-align: justify;
+}
+
+.search-group {
+  min-width: 400px; 
+  }
+.search-input {
+   width: 100%;
+ }
