@@ -1,0 +1,67 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Numbers</title>
+</head>
+<body>
+    <h4>Check console for results</h4>
+    <script>
+
+        let num1 = 10;
+        let num2 = BigInt(20);
+        let numStr=num1.toString();
+        console.log(`num1 datatype is ${typeof(num1)} \n numStr datatype is ${typeof(numStr)}`);
+
+        let num3 = 9.1234;
+        let numExp = num3.toExponential(4);
+        console.log(`
+        datatype of num3 is ${typeof(num3)}
+        Exponential num is ${numExp}
+        datatype of numExp is ${typeof(numExp)}`);
+
+        let numFixed = num3.toFixed(3);
+        let numFixed1 = num3.toFixed(2);
+        console.log(`
+num3 is ${num3}
+Fixed num is ${numFixed} with toFixed(3)
+Fixed num is ${numFixed1} with toFixed(2)
+datatype of numFixed is ${typeof(numFixed)}
+toFixed takes decimal values with what is passed as argument`);
+
+        let numPrecision = num3.toPrecision();
+        let numPrecision1 = num3.toPrecision(2);
+        console.log(`
+num3 is ${num3}
+Precision num is ${numPrecision} with precision()
+Precision num1 is ${numPrecision1} with precision (2)
+datatype of numPrecision num is ${typeof(numPrecision)}
+toPrecision takes full length as argument
+        `)
+
+        let numNum = 123;
+        let numObj = numNum.valueOf();
+        console.log(
+            `
+            datatype of ${numNum} is ${typeof(numNum)}
+            datatype of ${numObj} is ${typeof(numObj)}
+            `
+        )
+
+        let stringVal = '10';
+        let parsedVal = parseInt(stringVal);
+        console.log(
+            `
+            val of stringVal is ${stringVal}
+            val of parsedVal is ${parsedVal}
+            typeof stringVal is ${typeof(stringVal)}
+            typeof parsedVal is ${typeof(parsedVal)}
+            is stringVal number? ${Number.isInteger(stringVal)}
+            is parsedVal number? ${Number.isInteger(parsedVal)}
+            `
+        )
+    </script>
+</body>
+</html>
