@@ -1,0 +1,185 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    
+</head>
+<body>
+    --Check console for results--
+<script>
+    console.log('-------------Array Basics-----------');
+    const arr = [1,1.2,"string",'c',true];
+    let inc = 1;
+    for(a of arr){
+        console.log(` value at ${inc} is ${a}`);
+        inc++;
+    }
+    arr[5]=123n;
+    console.log(`value at 6 is ${arr[5]} and type is ${typeof(arr[5])}`);
+
+    console.log(`array length is ${arr.length}`);
+
+    arr.push('help');
+    console.log(`new array length is ${arr.length}`)
+
+    console.log('---Array methods---');
+
+    console.log(`typeof arr is ${typeof(arr)}`);
+
+    arr1=Array.toString(arr);
+    console.log(`typeof arr is ${typeof(arr1)}`);
+    console.log(arr1)
+    inc=1;
+    
+    const simpleArray = ['this','is','my','name'];
+    const toStringArray = simpleArray.toString();
+    console.log('this will print the array string charcter wise')
+    for(tsa of toStringArray){
+        console.log(tsa);
+    }
+    console.log(`This will print array string one after one with commas: ${toStringArray}`);
+    console.log(simpleArray.at(-1)) // this method can be used for negative values 
+    const toStringArrayWithSeperator = simpleArray.join(' -- ');
+    console.log(toStringArrayWithSeperator);
+
+    simpleArray.push('help'); // if you print this this will itself return the size, but if we print the array, all elements will be printed including this
+    console.log(simpleArray); 
+    simpleArray.pop();
+    console.log(simpleArray); // this will remove last element, without saving to new array, this updates the array
+
+    simpleArray.shift(); // removes first element
+    console.log(simpleArray);
+
+    simpleArray.unshift('in');
+    console.log(simpleArray);
+    // array now: in, is, my, name
+    
+    simpleArray.copyWithin(1, 3); // replace at 1st index with value at 3rd index
+    console.log(simpleArray);
+
+    const newArray = simpleArray.concat('thisNew'); // this needs to be stored in other variable
+    console.log(simpleArray);
+    console.log(`na: ${newArray}`);
+
+    // na: in,name,my,name,thisNew
+
+    const myArr = [[1,2],[3,4],[5,6]];
+    const newArrF = myArr.flat();
+    console.log(newArrF);
+
+    const myArrFM = [1, 2, 3, 4, 5, 6];
+    const newArrFM = myArrFM.flatMap(x => [x, x * 10]);
+    console.log(newArrFM);
+
+    newArray.splice(1,0,"newElement"); // (atWhatPosition,howManyElementsToRemove,...whatToAdd)
+    console.log(newArray); // effects old array
+
+    // na now: 'in', 'newElement', 'name', 'my', 'name', 'thisNew'
+    const newToSpliced=newArray.toSpliced(1,0,'newNewElement');
+    console.log(newArray); // won't change unless saved to new variable
+    console.log(newToSpliced);
+
+    const newsSlice = newArray.slice(1); // remove first elements
+    console.log(newArray);
+    console.log('nS:',newsSlice);
+    const newsSliceU = newArray.slice(1,4); // slices new array upto 4-1 elements
+    console.log(newsSliceU);
+
+    console.log('-- Array Search methods --');
+
+    const fruits = ["Apple", "Orange", "Apple", "Mango"];
+    let position = fruits.indexOf("Apple"); // index starts from 0
+    console.log(position);
+    let lastIndex = fruits.lastIndexOf('Apple');
+    console.log(lastIndex);
+
+    console.log(fruits.includes('orange'));
+    console.log(fruits.includes('APPLE')); //case sensitive
+    console.log(fruits.includes('Apple'));
+
+    console.log(fruits.findIndex(fruit => fruit=='Or ange')); // will return -1, if not found
+    console.log(fruits.find(fruit => fruit=='Orange')); // will return undefined, if not found
+
+    const nums = [1,5,4,3,2,1];
+    console.log(nums.toSorted()); // not updates the num array
+    console.log(nums);
+    console.log(nums.sort()); // updates the nums array
+    console.log(nums);
+    console.log(nums.toReversed());
+    console.log(nums.reverse()) //updates the nums array
+
+    const points = [40, 100, 1, 5, 25, 10];
+    console.log(points.sort()); // sort method works well with string, as this compares ist number only in num array
+    console.log(points.sort(function(a,b){return(a-b)}));
+
+
+    console.log('--------   Array Iteration ------');
+
+    const arrForEach = [45, 4, 9, 16, 25];
+    const arrMap = arrForEach;
+    arrForEach.forEach((val,index,array)=>{ // val, index, fullArray
+        console.log(val+1);
+    }); // prefered when return type is not needed, return type is undefined
+    console.log('Map::');
+    arrMap.map((val,index,array)=>{
+        console.log(val+1);
+    }); // prefered when return type is needed, returns the calling function values.
+
+    const flatMap = [1,2,3,4,[5,6]];
+    console.log(flatMap);
+    console.log(flatMap.flatMap((x)=>x+1)); // will produce uneven result at [5,6] as 1 is added to array not individual elements
+
+    const flatMapFlat = flatMap.flat();
+    console.log(flatMapFlat);
+    console.log(flatMapFlat.flatMap((x)=>x+1));
+    
+    
+    const numbersReduce = [45, 4, 9, 16, 25];
+    let sum = numbersReduce.reduce(myFunctionReduce);
+
+    console.log(sum);
+    function myFunctionReduce(totalReduce, valueReduce, indexReduce, arrayReduce) { // incorporates total to reduce the values in this variable
+        return totalReduce + valueReduce;
+    }
+
+    const numberEvery = [45, 4, 9, 16, 25];
+    let every18 = numberEvery.every(myFunctionEvery);
+    console.log(every18)
+    function myFunctionEvery(valueEvery, indexEvery, arrayEvery) {
+        return valueEvery > 18; // not all are over 18, thus will return false
+    }
+
+    const numberSome = [45, 4, 9, 16, 25];
+    let some18 = numberSome.some(myFunctionEvery);
+    console.log(some18)
+    function myFunctionEvery(valueSome, indexSome, arraySome) {
+        return valueSome > 18; // not all are over 18, thus will return false
+    }
+
+    const str = 'ABCdeF'; //string
+    const strArray = Array.from(str); //object
+    console.log(typeof(str), typeof(strArray))
+    console.log(Array.from(str,x=>x+1));
+
+    const frui = ["Banana", "Orange", "Apple", "Mango"];
+    const f = frui.entries();
+
+    for (let x of f) {
+        console.log(x);
+    }
+
+    const fru = ["Banana", "Orange", "Apple", "Mango"];
+    const keys = fru.keys();
+
+    for (let x of keys) {
+       console.log(x);
+    }
+
+
+
+</script>
+</body>
+</html>
