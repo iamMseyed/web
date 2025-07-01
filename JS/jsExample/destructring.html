@@ -1,0 +1,27 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <h2>Check console</h2>
+    
+    <script>
+        const person = {
+            'name':'lkjfslja',
+            'age':30,
+            'address':'ldfajlk lkjsadflk'
+        };
+        let {hey, hi} = person;
+
+        let {name, age, address, newVar=20 }= person;
+        console.log(person.name)
+        console.log(hey, hi); // names should be same else would print undefined
+        console.log(age, address,name,newVar); // this will print exact 
+
+    </script>
+</body>
+</html>
