@@ -1,0 +1,61 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+    
+</head>
+<body>
+    --Check console for results--
+<script>
+    let a = 10;
+
+    var b = 20;
+
+    const c = 20;
+
+    function scope(){
+        let a= 20;
+        var b = 30;
+        const c = 30;
+        // console.log('inside:',x,y,z);
+        console.log('inside:',a ,b,c);
+    }
+scope();
+    // console.log('outside:',x,y,z); //function scope, not accessable here!
+console.log('outside:',a,b,c);
+
+fun();
+console.log(carName); // accessable as carName is of no type
+// console.log(cN); // error
+function fun(){
+    carName = 'thisIs'; 
+    var cN = 'thisIss';
+}
+
+const ab = 10;
+
+abc = 10;
+abcd = 20;
+console.log(abc,abcd);
+
+var abc; // can be hoisted (only var declaration can be hoisted)
+// let abcd; // can't be hoisted 
+
+zz = 1.2;
+let z = 1.2;
+
+fun2();
+
+function fun2(){
+    console.log('help');
+    yy = 3.14; // this is not var, nor let nor const. code "use strict" to go over through this issue
+    console.log(yy);
+    var yy; 
+}
+</script>
+
+</body>
+</html>
