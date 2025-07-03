@@ -1,0 +1,39 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <h3>check console</h3>
+
+    <script>
+        class myClass {
+            constructor(arg1, arg2){
+                this.arg1=arg1;
+                this.arg2=arg2;
+            }
+        }
+       const obj1 = new myClass();
+       const obj2 =new myClass(1,2);
+
+       console.log(obj1,obj2);
+
+
+       class car{
+        constructor(name,age){
+            this.name = name;
+            this.age= age;
+        }
+        carAge = function(){
+            return this.age;
+        }
+       }
+
+       const carObj = new car('audi','23');
+       console.log(carObj.carAge());
+    </script>
+</body>
+</html>
