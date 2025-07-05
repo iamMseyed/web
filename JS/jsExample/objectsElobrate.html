@@ -1,0 +1,151 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Objects explained</title>
+</head>
+<body>
+    <h3>Check console</h3>
+
+    <script>
+        console.log('--> Simple object example');
+        const objLit = {
+            'prop1':'val1',
+            'prop2':'val2',
+            'prop3':2
+        };
+
+        console.log('-->Create objec then add properties');
+        const objAddLater = {}; // or const objAddLater = new Object()
+        objAddLater.prop1='add1';
+        objAddLater.prop2='add2';
+        console.log(objAddLater);
+
+        console.log('-->Object constructor function');
+
+        function ObjectConstFun(first, middle, last){
+            this.first= first;
+            this.last= last;
+            this.middle=middle;
+            this.age=20
+
+            function greetIn(){ // this wouldn't be available outside this scope
+                console.log(this.first + ' ' +this.middle+ ' '+ this.last + ' ' + this.age);
+            }
+
+            this.greetOut=function(){ // this will be avialbe to every sinlge instace created for this object
+                console.log(this.first + ' ' +this.middle+ ' '+ this.last + ' ' + this.age);
+            }
+        }
+
+        const ob = new ObjectConstFun('firstName','middleName','lastName');
+       // ob.greetOut();
+        const ob1 = new ObjectConstFun('firstName1','middleName1','lastName1');
+        ob1.greetOut();
+
+        console.log('-->Object Methods');
+        
+        console.log('assign mehtod');
+        const objNew = new Object();
+        Object.assign(objNew, ob);
+        objNew.greetOut();
+        console.log('--> Entries method');
+        
+        for( let[key, value] of Object.entries(ob)){
+            console.log(key,value);
+        }
+        
+        console.log('-> Map method');
+        const mapOb =  {};
+        Object.assign(mapOb,ob1);
+        
+        const myMap = new Map(Object.entries(objLit));
+
+        console.log(myMap);
+
+        console.log('-> fromEntires()');
+        const arr = [
+            ['name','who'],
+            ['age',20]
+        ];
+        const arr2ob = Object.fromEntries(arr); // converts arr to obj
+        console.log(arr2ob);
+
+        for( let [key,value] of Object.entries(arr2ob)){
+            console.log(key,value);
+        }
+        for(let key of Object.keys(arr2ob)){
+            console.log(key);
+        }
+
+        for (let val of Object.values(arr2ob)){
+            console.log(val);
+        }
+
+        Object.entries(arr2ob).forEach(([key,value])=>{
+            console.log(key, value)
+        });
+
+        console.log('-> values()');
+
+        const objVal=Object.values(arr2ob);
+        console.log(objVal);
+
+        console.log('-> Object Properties');
+        console.log('-> addProp1');
+        const obProp = {
+            'name':'name1',
+            'last':'value1',
+            'age':20
+        }
+
+        obProp.newVal1='help';
+
+        for (let [key, val] of Object.entries(obProp)){
+            console.log(key,val);
+        }
+        console.log('-> addProp2')
+        Object.defineProperty(obProp,"newVal2",{value:"2008", enumerable: true});
+        for (let [key, val] of Object.entries(obProp)){
+            console.log(key,val);
+        }
+    /*
+        writable : true      // Property value can be changed
+        enumerable : true    // Property can be enumerated
+        configurable : true  // Property can be reconfigured
+        writable : false     // Property value can not be changed
+        enumerable : false   // Property can be not enumerated
+        configurable : false // Property can be not reconfigured
+    */
+
+    console.log('-- Object Protection --');
+    // Prevents re-assignment
+    const car = {type:"Fiat", model:"500", color:"white"};
+
+    // Prevents adding object properties
+    Object.preventExtensions(car)
+
+    car.willNotBeAdded = 'error';
+
+    console.log(car);
+    // Returns true if properties can be added to an object
+    console.log(Object.isExtensible(car));
+
+    // Prevents adding and deleting object properties
+    Object.seal(car)
+    car.willNotBeAddedAgain = 'errorAgain';
+    console.log(car);
+    // Returns true if object is sealed
+    console.log(Object.isSealed(car));
+
+    // Prevents any changes to an object
+    Object.freeze(car)
+    
+    // Returns true if object is frozen
+    Object.isFrozen(car)
+
+    </script>
+</body>
+</html>
