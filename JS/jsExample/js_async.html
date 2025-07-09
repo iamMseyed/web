@@ -1,0 +1,62 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h4>Check Console</h4>
+
+    <script>
+        console.log('-- Callbacks --');
+        function getUserData(id, callback) {
+        setTimeout(() => {
+            const user = { id: id, name: "Alice" };
+            callback(user);
+        }, 1000);
+    }
+
+    function handleUserData(user) {
+        console.log("User data:", user);
+    }
+
+    getUserData(1, handleUserData);
+
+    console.log('-- Promises --');
+    function getUserData(id) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const user = { id: id, name: "Alice" };
+            resolve(user);
+        }, 1000);
+      });
+    }
+
+    getUserData(1)
+        .then(user => {
+            console.log('User data:', user);
+    });
+
+    console.log('--Async/Await--');
+
+    function getUserData(id) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const user = { id: id, name: "Alice" };
+            resolve(user);
+        }, 1000);
+    });
+    }
+
+    async function fetchUserData() {
+        const user = await getUserData(1);
+        console.log('User data:', user);
+    }
+
+    fetchUserData();
+
+    </script>
+</body>
+</html>

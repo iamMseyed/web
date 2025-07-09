@@ -8,7 +8,10 @@
 </head>
 <body>
     <h3>check console</h3>
-
+    <h4>
+        A JavaScript class is not an object.
+        It is a template for JavaScript objects.
+    </h4>
     <script>
         class myClass {
             constructor(arg1, arg2){
@@ -34,6 +37,89 @@
 
        const carObj = new car('audi','23');
        console.log(carObj.carAge());
+
+       console.log('Class Inheritance');
+
+       class parent{
+        constructor(parVal){
+            this.parVal = parVal;
+        }
+        parentMethod(){
+            return `Parents shower ${parVal} on their childs!`;
+        }
+       }
+
+       class child extends parent{
+        constructor(parVal,childVal){
+            super(parVal);
+            this.childVal=childVal;
+        }
+        childMethod(){
+            return `Now-a-days generation is ${this.childVal} where their parents show ${this.parVal} to them`;
+        }
+       }
+
+       const childObj = new child('love','cringe');
+       console.log(childObj.childMethod());
+
+       console.log('Getters and Setters');
+
+       console.log('With constructor()');
+       class getSet{
+        constructor(name){
+            this.clasVarName=name;
+        }
+         get getPropName(){
+            return this.clasVarName;
+         }
+         set setPropName(setCarName){
+            this.clasVarName=setCarName;
+         }
+       }
+
+       const getSetObj = new getSet('anyName');
+       getSetObj.setPropName='help';
+       console.log(getSetObj.getPropName); // don't use () to call getPropName
+
+       console.log('Without constructor()');
+       class getSetWoC{
+        constructor(){
+            this.clasVarName = '';
+        }
+         get getPropName(){
+            return this.clasVarName;
+         }
+         set setPropName(setCarName){
+            this.clasVarName=setCarName;
+         }
+       }
+
+       const getSetObjWoC = new getSetWoC();
+       getSetObjWoC.setPropName='any name via setter';
+       console.log(getSetObjWoC.getPropName); // don't use () to call getPropName
+       
+
+       console.log('---Static Methods---');
+
+        class Car {
+        constructor(name) {
+            this.name = name;
+        }
+        static hello() {
+            return "Hello!!";
+        }
+        }
+
+        const myCar = new Car("Ford");
+
+        // You can call 'hello()' on the Car Class:
+        console.log(Car.hello());
+
+        // But NOT on a Car Object:
+        // console.log(myCar.hello());
+        // this will raise an error.
+
+
     </script>
 </body>
 </html>
