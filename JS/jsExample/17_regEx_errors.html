@@ -1,0 +1,57 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    
+</head>
+<body>
+    <p>Please input a number between 5 and 10:</p>
+
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+
+    --Check console for results--
+<script>
+    function myFunction() {
+  const message = document.getElementById("p01");
+  message.innerHTML = "";
+  let x = document.getElementById("demo").value;
+  try {
+    if(x.trim() == "") throw "empty"
+    if(isNaN(x)) throw "not a number";
+    if(x < 5) throw "too low";
+    if(x > 10) throw "too high";
+    if(x>=5 && x<=10) 
+        message.innerHTML= 'Good';
+  }
+  catch(err) {
+    message.innerHTML = "Input is " + err;
+  }
+}
+    let str1 = 'value is one';
+    console.log(str1.search('one'));
+    console.log(str1.search(/One/));
+    console.log(str1.search(/One/i)); // i is case insensitive
+
+    console.log(str1.replace('one','two'));
+    console.log(str1.replace(/ONE/i,'Two'));
+
+    
+    let a = 1, b= 0;
+    try{
+        console.log('in try before error!');
+        addlert('how you doin!');
+        console.log('in try after error, executed?');
+    }catch(err){
+        console.log(err);
+        console.log('in catch after err!');
+    }finally{
+        console.log('this will get executed at any cost')
+    }
+</script>
+</body>
+</html>

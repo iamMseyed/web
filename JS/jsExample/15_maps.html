@@ -1,0 +1,72 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+</head>
+<body>
+    <h2>Check console for output</h2>
+<script>
+    console.log(`
+        The Map Object
+        A Map object holds key-value pairs where the keys can be any datatype.
+        A Map also remembers the original insertion order of the keys.`);
+    const mapEle = new Map();
+    mapEle.set('mapEle1',200);
+    mapEle.set('mapEle2',300);
+    mapEle.set('mapEle3',300);
+
+    console.log('for of elements are:')
+    for( let me of mapEle){
+        console.log(me);
+    }
+
+    for (const [key, value] of mapEle) {
+    console.log(`${key}: ${value}`);
+}
+
+    console.log(mapEle.get('mapEle1'));
+
+    const mapEle1 = new Map([
+        ['me1',100,],
+        ['me2',200],
+        ['me3',300]
+    ]);
+
+    console.log(mapEle1.get('me2'));
+
+    console.log(mapEle1.size);
+
+    mapEle1.delete('me3');
+    console.log(mapEle1.get('me3'));
+
+    console.log(mapEle1.has('me2'));
+
+    console.log('Elements are:')
+    
+    mapEle1.forEach(function(value){
+        console.log(value);
+    });
+
+    mapEle1.forEach(function(key1,value1){
+        console.log(key1,value1);
+    });
+
+
+    for (const mEnt of mapEle1.entries()){
+        console.log(mEnt);
+    }
+
+    for (const mKeys of mapEle1.keys()){
+        console.log(mKeys);
+    }
+
+    for (const mVal of mapEle1.values()){
+        console.log(mVal);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <h3>Check console for output</h3>
+</body>
+<script>
+    console.log(`
+    A JavaScript Set is a collection of unique values.
+    Each value can only occur once in a Set.
+    The values can be of any type, primitive values or objects.`);
+    
+   const setLet = new Set(); 
+   setLet.add('1');
+    console.log('-- Set 1 --');
+    for(let sL of setLet){
+        console.log(sL);
+    }
+    console.log(' -- set 1 ends -- ');
+
+   const setLet1 = new Set(['a','b','c','d']);
+   setLet1.add('1');
+   setLet1.add('1');
+   for(const sLl of setLet1){
+    console.log(sLl);
+   }
+
+   console.log('-- set 2 ends -- ')
+
+   console.log(setLet1.size);
+   console.log(setLet1.has('1'));
+
+   setLet1.forEach( (a,b)=>{
+    console.log(a);
+   } );
+
+   console.log('-- set 3 ends -- ');
+
+   console.log('--Values Method--'); 
+   //The values() method returns an Iterator object with the values in a Set
+   const valSet = new Set(['a','b','c','d']);
+   const newValSet = valSet.values();
+   valSet.forEach(function(valueS){
+        console.log(valueS);
+   });
+
+    newValSet.forEach(function(valueNVS){
+        console.log(valueNVS);
+   });
+
+    console.log('-- set 4 ends -- ');
+    
+   console.log('--Keys Method--'); // A Set has no keys, so keys() returns the same as values().
+   const keySet = new Set(['a','b','c','d']);
+   const newKeySet = valSet.keys();
+
+   keySet.forEach(function(keyS){
+        console.log(keyS);
+   });
+
+    newKeySet.forEach(function(keyNS){
+        console.log(keyNS);
+   });
+
+   console.log('--Entries Method--'); // A Set has no keys, so keys() returns the same as values().
+
+
+   const entiresSet = new Set(['a','b','c','d']);
+   const newEntriesSet = entiresSet.entries();
+
+   entiresSet.forEach(function(entriesS){
+        console.log('es',entriesS);
+   });
+   
+    newEntriesSet.forEach(function(entriesNS){
+        console.log('nes', entriesNS);
+   });
+
+   console.log('-- set 5 ends -- ');
+   console.log('-- Set Logic --');
+
+   const A = new Set(['a','b','c']);
+    const B = new Set(['b','c','d']);
+
+    const C = A.union(B);
+
+    for(val of C){
+        console.log(val);
+    }
+
+    
+</script>
+</html>

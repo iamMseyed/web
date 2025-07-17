@@ -1,0 +1,57 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <h4>--  Check console ---</h4>
+<script>
+    const obj = {
+    'name':'name1',
+    'funName':function(name){
+        console.log('-------')
+        console.log(this.name); // whatever is here in this object not what is sent in argument
+        console.log(name);
+    }
+}
+obj.funName('help');
+var x = this;
+console.log(x); // this referes to global object
+
+const objThis = {
+    'name':'nameOne',
+    'age':30,
+    funThis:function ft(){
+        return this;
+    }
+}
+const obOp = objThis.funThis();
+console.log(obOp);
+
+console.warn('-- funtion Call() --')
+const objOne = {
+     'a':'val1',
+    'b':'val2',
+    fun1: function funOne(){
+        console.log(objOne.a + ' ' + this.b);
+    }
+}
+
+const objTwo = {
+    'a':'val3',
+    'b':'val4'
+}
+
+ objOne.fun1.call(objTwo);
+
+console.warn('-- function bind() --');
+
+const boundOne = objOne.fun1.bind(objTwo)
+boundOne(); 
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo App</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="taskApp.js"> </script>
+<style>
+    .task-item { display: flex; align-items: center; justify-content: space-between; }
+    .task-buttons { display: flex; gap: 0.5rem; }
+</style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Todo App</h2>
+    <div class="form-group">
+        <input type="text" id="taskInput" class="form-control" placeholder="Enter new task">
+        <button id="addButton" class="btn btn-primary mt-2" onclick="addTask()">Add Task</button>
+    </div>
+    <h3>Tasks</h3>
+    <ul id="taskList" class="list-group"></ul>
+    <h3 class="mt-4">Done</h3>
+    <ul id="doneList" class="list-group"></ul>
+</div>
+</body>
+</html>

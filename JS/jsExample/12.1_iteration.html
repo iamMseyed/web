@@ -1,0 +1,73 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+     <h3>Loops</h3>
+
+     <script>
+
+       console.log(`
+       Arrays: Can use for, for...of, and forEach safely. for...in is not recommended.
+       Objects: Use for...in to iterate over properties.
+       Strings: Can use for and for...of to iterate over characters.
+       Sets: Use for...of and forEach.
+       Maps: Use for...of and forEach.`);
+
+        const arrFor = new Array(10,2,32,40,50);
+        console.warn('-- For Loop --');
+        for (let i = 0;i<arrFor.length;i++){
+            console.log(arrFor[i]);
+        }
+
+        const arrForOf = new Array(1,4,2,5,6);
+        console.warn('-- for/of');
+        for (let aFor of arrForOf){
+            console.log(aFor);
+        }
+
+        const forIn = new Array(3,4,6,3,1);
+        console.warn('-- for/in --');
+        for (let fIn in forIn){
+            console.log(forIn[fIn]);
+        }
+
+        let a = 1;
+        let num = a/2;
+        console.log(`num is ${num}`);
+        switch(true){
+            case (num>0 || num<10): // not good to use condition in case statement
+                  console.log(`${num} is greater than 0 and less than 10`);
+                break;
+            case (num>=10 || num<20 ):
+                 console.log(`${num} is greater or equal to 10 and less than 20`);
+                break;
+            default:
+                console.log('Number is not in the range of 0 and 20');
+        }
+
+        let A='A';
+        let B='B';
+        console.log(A,B);
+        num = 0.5;
+        console.log(`num is ${num}`);
+        switch(num){
+            case A:
+                if(num>0 || num<10)
+                  console.log(`${num} is greater than 0 and less than 10`);
+                break;
+            case B:
+                if(num>=10 || num<20 )
+                 console.log(`${num} is greater or equal to 10 and less than 20`);
+                break;
+            default:
+                console.log('Number is not in the range of 0 and 20');
+        }
+
+     </script>
+</body>
+</html>

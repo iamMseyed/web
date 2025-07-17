@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            JS Examples
+        </title>
+
+        <script src="../datatype.js"></script>
+         <script src="../jsExample/functions_objects.js"></script>
+         <script src="../jsExample/jsEvents.js"></script>
+         <script src="jsStrings.js"></script>
+    </head>
+
+      <body ononline="onFunction()" onoffline="offFunction()">
+      <!-- onpagehide="onPageHideFunction()"> -- will display pop up that page is moving if clicked on a link--> 
+        <p id="demoOnlineOffline" style="color: red; background-color: yellow;"></p>
+        <!-- onbeforeunload="return functionUnload()" -->
+        <!-- onbeforeprint="onbeforeprint()" -->
+         <!-- onafterprint="onafterprint()" -->
+        <hr>
+            <h3>Check Console</h3>
+        <hr>
+
+        <p>The date is: <span id="demo"> </span> </p>
+
+        <button onclick="document.getElementById('demo').innerHTML=Date()">Check Curent Date</button>
+        
+        <hr>
+        <p>will load an alert once print option is used -- commented now</p>
+        <hr>
+
+        <h3>onbeforeunload event</h3>
+        <a href="../../udemy.com/index.html"> Click here</a>
+        <hr>  
+        
+        <h5> Change input to upper case when unfocused</h5>
+
+       Enter your name: <input type="text" id="fname" onblur="blurFunction()">
+       <hr>
+       <h5>Choose any option to see what option has been picked</h5>
+       Select any option : 
+       <select id="selectOption" onchange="myFunctionOnChange()">
+            <option selected>  -- Select -- </option>
+            <option>  1</option>
+            <option>  2</option>
+            <option>  3  </option>
+       </select>
+       <span id="selectOutuput"> </span>
+       <hr>
+
+       <h5>oninput event</h5>
+       Type any thing: <input type="text" id="anyInput" oninput="onInputFunction()">
+       <span id="inputVal"></span>
+
+       <hr>
+       <h5>Onclick</h5>
+       <button id="onClick" onclick="onClickFunction()">Hit me!</button>
+       <span id="spanOnClick"></span>
+
+       <hr>
+       <h5>Ondbcclick</h5>
+       <button id="ondblClick" ondblclick="ondblClickFunction()">doubble click on me!</button>
+       <span id="spanOnDblClick"></span>
+
+       <hr>
+       <div style="border: 1px solid red; padding:2px;text-align: center;" id="myDiv" >    
+        <h5>Right click on this div</h5>
+        <p>Context menu is disabled here</p>
+       </div>
+
+       <hr>
+       <h5>onmouseover</h5>
+       <button onmouseover="onMH()">Hover mouse over me</button>
+       <span id="oMHT"></span>
+
+        <hr>
+       <h5>oncopy</h5>
+       <p oncopy="onCopy()">Copy the sentence here <span id="onC"></span></p>
+
+       <hr>
+       <h5>onfocus</h5>
+       Enter your name: <input type="text" onfocus="myFunction(this)">
+        
+       <hr>
+       <h5>oninput</h5>
+       Enter any thing <input type="text" id="onInput" oninput="myOIFunction()">
+       <p id="onInputDemo"></p>
+
+       <hr>
+       <h5>oninvalid -- same as required tag in html</h5>
+       <form>
+          Name: <input type="text" oninvalid="onInvalidFunction()" name="fname" required>
+          <button type="submit"> submit</button>&nbsp;&nbsp;&nbsp;<span id="onInvalidFunctionDemo"></span> 
+       </form>
+
+       <hr>
+       <h5>onkeydown</h5>
+       Enter any thing <input type="text" id="onKeyDown" oninput="onKeyDownFunction()">
+       <span id="onKeyDownDemo"></span>
+       
+       <hr>
+       <h5>onkeyup</h5>
+       Enter any thing <input type="text" id="onKeyUp" oninput="onKeyUpFunction()">
+       <span id="onKeyUpSpan"></span>
+
+       <hr>
+       <h5>onload</h5>
+       <img src="../../assets/backgroundImage.jpg" alt="backgroundImage" width="500" height="200" 
+        onload="onLoadedFunction()"> <!-- "alert('Image loaded successfully!')" -->
+        <span id="onLoadedDemo"></span>
+
+        <hr>
+        <h5>reset</h5>
+        <span>Same as onreset() can use reset in button to do the same</span>
+        <form action="">
+            Username: <input type="text"> <br>
+            Password: <input type="password"><br>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+
+        <hr>
+        <h5>onscroll</h5>
+        <div onscroll="onScrollFunction()"
+        style="border: 1px solid black;
+               width: 200px;
+               height: 100px;
+               font-weight: 5px;
+               justify-content: center;
+               overflow: scroll;">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam labore, libero quidem debitis aut illum soluta voluptatum quisquam aliquam, quasi est doloremque, quam necessitatibus saepe odio quis dolorum porro. Illo!</p>
+        </div>
+        <span> This div is scrolled <span id="onScrollDemo">0</span> times up and down</span>
+
+        <hr>
+        <h5>onsearch</h5>
+        Search: <input type="search" id="searchItem" onsearch='onSearchFunction()' placeholder="type any thing and press enter key to search, it will delete the entry when you press 'x' close button">
+        <span id="onSearchDemo"></span>
+
+        <hr>
+        <h5>onselect</h5>
+
+        Input: <input type="text" value="select any text" onselect="onSelectFunction()">
+
+        <hr>
+        <h5>ontoggle - works with details tag only</h5>
+
+        <details ontoggle="onToggleFunction()">
+        <summary>Copyright 1999-2014.</summary>
+        <p> - by Refsnes Data. All Rights Reserved.</p>
+        <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+        </details>
+
+        <hr>
+        <h5>JS String</h5>
+        <button onclick="getValues()">Get Values</button><br>
+        <p id="str1">String one</p> <span id="strVal1"></span>
+        <p id="str2">String Two</p> <span id="strVal2"></span>
+        <p id="str3"></p> <span id="strVal3"></span>
+
+    </body>
+</html>

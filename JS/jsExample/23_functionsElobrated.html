@@ -1,0 +1,153 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions Elobrated</title>
+</head>
+<body>
+    <h3>Check Console</h3>
+    <script>
+        function toBeCalled(){
+            console.log("this won't trigger automatically unless called");
+        }
+
+        (function notToBeCalled(){
+            console.log('This function will automatically be invoked!');
+        })();
+        (function (){
+            console.log('This autonomous function will be automatically invoked!');
+        })();
+        //toBeCalled();
+
+        function myFunction(a, b) {
+            return a * b;
+        }
+
+        let x = myFunction(4, 3) * 2;
+        console.log(x);
+
+        const y = ()=>{return x*2};
+        console.log(y);
+        console.log(y());
+
+        function sum(...args) {
+            let sum = 0;
+             for (let arg of args) 
+               sum += arg;
+            return sum;
+            }
+
+        console.log(sum(4, 9, 16, 25, 29, 100, 66, 77));
+
+        console.log('-> Function call()');
+        const display = {
+            allDetails: function(gender,city) {
+                if(gender === undefined && city === undefined )
+                    return this.fullname + " " + this.lastname + " "+ this.age;
+                else 
+                    return this.fullname + " " + this.lastname + " "+ this.age +" "+gender + " " +city ;
+            }
+        }
+
+        const objTwo = {
+            'fullname':'fullName1',
+            'lastname':'lastName2',
+            'age':25
+        }
+
+        const objThree = {
+            'fullname':'fullName3',
+            'lastname':'lastName4',
+            'age':30
+        }
+
+        console.log(display.allDetails.call(objTwo));
+        console.log(display.allDetails.call(objThree));
+
+        console.log(display.allDetails.call(objTwo,100,'sxr'));
+        console.log(display.allDetails.call(objThree,120,'maa'));
+
+        console.log('-> Apply()');
+        /*
+         The call() method takes arguments separately.
+         The apply() method takes arguments as an array. 
+        */
+
+        console.log(display.allDetails.apply(objTwo,[100,'sxr']));
+        console.log(display.allDetails.apply(objThree,[120,'maa']));
+
+        console.log('-> Bind()');   
+
+        const person = {
+            firstName:"J",
+            lastName: "D",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        const member = {
+            firstName:"H",
+            lastName: "N",
+        }
+
+        let fullNameBind = person.fullName.bind(member);
+        console.log(fullNameBind());
+
+        /*
+        When you need to pass an object's method as a callback function,
+        you can use bind to ensure that the method retains its original this context.
+        */
+       const noBind = {
+        firstName: "J",
+        lastName: "E",
+        display: function () {
+            console.log('->',this.firstName + " " + this.lastName);
+        }
+        };
+        noBind.display();
+        setTimeout(noBind.display, 3000); // after 3 secs lost this context!
+        
+        const bindUse  = {
+        firstName: "John",
+        lastName: "Doe",
+        display: function () {
+            console.log(this.firstName + " " + this.lastName);
+        }
+        };
+
+        let displayBindUse = bindUse.display.bind(bindUse); // with bind, this context is not lost
+        console.log('wait for',setTimeout(displayBindUse, 3000), 'secs'); // This will output value after 3 seconds
+
+        console.log('-> function closure');
+        /*
+        When you create a function that defines and returns another function, 
+        and the inner function has access to the variables of the outer function, 
+        it forms a closure. The inner function maintains a reference to the outer function's scope,
+        which allows it to access and modify the outer function's variables even after the outer function 
+        has finished executing.
+        */
+
+        function createCounter() {
+            let count = 0; // Local variable in the scope of createCounter, called just once!
+            let cool = 0;
+             return function incrementCount() {
+                count += 1; // Increment the count
+                cool-=1;
+              //  return [count,cool]; // Return the new count as array
+                return {
+                    count:count,
+                    cool:cool
+                } // return as object
+            };
+        }
+
+        const counter = createCounter(); // counter is a closure capturing count variable
+        console.log(counter()); // Output: 1
+        console.log(counter()); // Output: 2
+        console.log(counter()); // Output: 3
+    </script>
+</body>
+</html>

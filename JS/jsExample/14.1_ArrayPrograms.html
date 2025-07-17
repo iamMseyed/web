@@ -1,0 +1,354 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Programs</title>
+</head>
+<body>
+    <h3>Kindly check console</h3>
+
+    <script>
+        let a = new Set([1,2,3,1]);
+        console.log(toString.call(a));
+
+        let b = new Map ([[1,'one'],[2,'two'],[3,'three']]);
+        console.log(toString.call(b));
+
+        let c = new Array (1,2,3);
+        console.log(toString.call(c));
+
+        console.warn('Is Array?');
+        var is_array = function(input) {
+
+        if (toString.call(input) === "[object Array]")
+            return true;
+        return false;   
+        };
+        console.log(`is 'w3resource' an array: ${is_array('w3resource')}`);
+        console.log(`is [1,2,3,4] an array: ${is_array([1, 2, 3,4])}`);
+
+
+        console.warn('Clone an array');
+    
+        var array_Clone = function(arra1) {
+            return arra1.slice(0);
+        };
+        console.log(array_Clone([1, 2, 4, 0]));
+        console.log(array_Clone([1, 2, [4, 0]]));
+
+        console.warn('First Elements of Array');
+        let val = function (arr2,param){
+            let len = arr2.length;
+            let par = param;
+            let retArr = [];
+           console.log(`--> len is ${len} and par is ${par} and arr is ${arr2}`);
+            if(par==0)
+                return `First element is ${arr2[0]}`;
+            if(len==0)
+               return arr2;
+            if(par>0 && len>0){
+                for(i=0;i<par;i++){
+                    retArr[i] =arr2[i] 
+                    console.log(`${retArr[i]} and ${arr2[i]}`)
+                }
+                return retArr;
+            }
+        }
+        let ar1 =[7, 9, 0, -2];
+        console.log(val(ar1,0));
+
+        let ar2 =[];
+        console.log(val(ar2,3));
+
+        console.log(val(ar1,3));
+
+
+        console.warn('Join two Arrays');
+        let arr1 = [1,2,3,4];
+        let arr2 = [5,6,7,8];
+        let arr3 = [];
+        for (let i=0;i<arr1.length;i++){
+            arr3[i]=arr1[i];
+        }
+        let totLen = arr1.length+arr2.length;
+        let j = 0;
+        for(let i=arr1.length;i<totLen;i++){
+            arr3[i]=arr2[j];
+            j++;
+        }
+
+        for(let i = 0;i<arr3.length;i++){
+            console.log(arr3[i]);
+        }
+
+        console.warn('Join Array elements');
+
+        let arrJoin = [1,'this',2,'hey',3];
+        for (let i = 0;i<arrJoin.length;i++){
+            console.log(arrJoin[i]);
+        }
+
+        console.log(arrJoin.toString());
+        console.log(arrJoin.join(' + '));
+
+        console.warn('Dashes between even');
+        //alert('Enter any number');
+        try{
+        //    var num = window.prompt();
+            var num = 12344556000;
+            var str = num.toString();
+            var result = [];
+            console.log(`result-> ${result}`);
+            for(let i = 1; i<str.length;i++){
+            if(str[i-1] %2 == 0 && str[i]%2==0){
+                result.push('-', str[i]);
+            }else {
+                 result.push(str[i]);
+            }
+        }
+        console.log(result.join(''));  
+        }
+        catch(exp){
+            console.error(`enter any number!`);
+        }
+
+        console.warn('Most frequent Array Element');
+
+        /*
+        Logic: compare element with itself and next elements, if it matches, increment the occurance, and save 
+        the element. Once you move out of inner loop, reset what is most frequent value. 
+        assign occurance, frequent to zero. In first iteration, occurance will be checked with who is most frequent
+        and if it passes, store the particular values to later display them.
+        */
+       var arrFre = ['a', 2, 2, 3, 3, 3, 3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+
+        var occurance = 0; // To store highest frequency found
+        var mostFrequent = 0; // To count frequency of current element
+        var mostFreqItem; // To store the element with highest frequency
+
+        for (var i = 0; i < arrFre.length; i++) { // Outer loop over each element
+            for (var k = i; k < arrFre.length; k++) { // Inner loop starting from current element index
+                if (arrFre[i] == arrFre[k]) { // Compare current element with rest
+                    mostFrequent++; // Increment count if match found
+                }
+            }
+            
+            // Check if current element's frequency is greater than any previously recorded frequency
+            if (occurance < mostFrequent) { 
+                occurance = mostFrequent; // Update maximum frequency
+                mostFreqItem = arrFre[i]; // Update element with highest frequency
+            }
+
+            // Reset current frequency counter for next element
+            mostFrequent = 0; 
+        }
+
+        console.log(mostFreqItem + " (" + occurance + " times)"); // Output most frequent element and its count
+
+
+        console.warn('Swap string case');
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        const resultStr=[];
+        var str = 'aBcdEF';
+        for(var i = 0;i<str.length;i++){
+          if(UPPER.indexOf(str[i])!=-1)
+            resultStr.push(str[i].toLowerCase())
+          else
+            resultStr.push(str[i].toUpperCase())
+        }
+        console.log(`input string is ${str}`)
+        console.log(`output string is ${resultStr.join('')}`);
+
+        console.warn('Printing nested array elements');
+
+        // Declare and initialize a sample 2-D array
+        const ar = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+        ];
+        // Iterate through each row in the 2-D array
+        for (var i in ar) {
+        // Output the current row index
+        console.log(`row ${+i+1}`); // i is string type +i to convert to int and add 1 to it
+        // parseInt(i,10); // val,base 10
+        // Iterate through each element in the current row
+        for (const j in ar[i]) {
+            // Output the current element value
+            console.log(` ${ar[i][j]}`);
+        }
+        }
+
+        console.warn('Sum of squares in array');
+
+        const arSq = [0,1,2];
+        console.log(arSq.length)
+        var sum = 0;
+        for(var i = 0;i<arSq.length;i++){
+            sum = sum+Math.pow(arSq[i],2);
+        }
+        console.log(`Sum of square of [${arSq.join( )}] is ${sum}`)
+
+        console.warn('sum and product of array elements');
+
+        const arSumProd = [1,2,3,2];
+        var sum = 0;
+        var prod = 1;
+        for(var i = 0;i<arSumProd.length;i++){
+            sum += arSumProd[i];
+            prod *= arSumProd[i]
+        }
+        console.log(`Sum is ${sum} and prod is ${prod} of [${arSumProd.join( )}]`);
+
+        console.warn('Remove duplicates');
+
+        const arr = [1, 2, 2, 3, 4, 4, 5];
+        const uniqueArr = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            let isDuplicate = false;
+            for (let j = 0; j < uniqueArr.length; j++) {
+                if (arr[i] == uniqueArr[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                uniqueArr.push(arr[i]);
+            }
+        }
+        console.log(uniqueArr); 
+
+        console.warn('Find leap years in a range');
+        var findLeapRange = function(yearStart,yearEnd){
+            for(var i = yearStart;i<=yearEnd;i++){
+                if ((i % 4 === 0 && i % 100 !== 0) || (i % 400 === 0)) 
+                    console.log(`${i} is a leap year`);
+                else 
+                    console.log(`${i} is not a leap year`);
+            }
+        }
+
+        findLeapRange(2000,2010);
+
+
+        console.warn('Sum of arrays by index');
+
+        var sumByIndex = function (a1,a2){
+            let l1 = a1.length;
+            let l2 = a2.length;
+            var ctr = 0;
+
+            let result =[];
+            while (ctr<a1.length || ctr<a2.length){
+                if(isNaN(a1[ctr])){
+                    a1[ctr]=0
+                }
+                if(isNaN(a2[ctr])){
+                    a2[ctr]=0
+                }
+                result.push(a1[ctr]+a2[ctr]);
+                ctr++
+            }
+            return result;
+        }
+        var a1 = [1,2,3,4];
+        var a2 = [6,7,8,9,5,6,7];
+        console.log(sumByIndex(a1,a2));
+
+        console.warn('Find duplicates');
+        var findDup = function (arr){
+            var len = arr.length;
+            const dupArr = [];
+            for(var i = 0;i<len;i++){
+                for (var j=i+1;j<len;j++){
+                    if(arr[i]==arr[j])
+                        dupArr.push(arr[i]);
+                }
+            }
+            return dupArr;
+        }
+
+        var findNoDup = function (arr){
+            var len = arr.length;
+            const dupArr = [];
+            const noDupApp = new Set();
+            for(var i = 0;i<len;i++){
+                for (var j=i+1;j<len;j++){
+                    if(arr[i]!=arr[j])
+                        noDupApp.add(arr[i]);
+                }
+            }
+            return noDupApp;
+        }
+        console.log(findDup([1,2,3,4,1,2]));
+        console.log(findNoDup([1,2,3,4,1,2]));
+
+        console.warn('Differene of two array elements');
+
+        var diffElements = function (a1,a2){
+            const len1 = a1.length;
+            const len2 = a2.length;
+
+            const diffArr=[];
+            let ctr = 0;
+
+            while(ctr<len1 || ctr< len2){
+                if(isNaN(a1[ctr]))
+                    a1[ctr]=-0;
+                if(isNaN(a2[ctr]))
+                    a2[ctr]=-0;
+                diffArr.push(a2[ctr]-a1[ctr])
+                ctr++;
+            }
+            return diffArr;
+        }
+
+        console.log(diffElements([2,3,1,0,4,5],[5,6,7,8]));
+
+        console.log('Difference of two arrays');
+
+         var joinArrays = function (a1,a2){
+            const len1 = a1.length; //6
+            const len2 = a2.length; //4
+
+            const joinedArray = []
+            for(var i = 0;i<len1;i++){
+                joinedArray.push(a1[i]);
+            };
+            for(var j=0;j<len2;j++){
+                joinedArray.push(a2[j]);
+            };
+            return joinedArray;
+        }
+        var diffArray = function (arr,prev1,prev2){
+            let len = arr.length;
+            const setOne = new Set();
+            for(var i = 0; i<=len;i++){
+                let count = 0;
+                for (var j = i+1;j<=len;j++){
+                    if(arr[i]!=arr[j]){  
+                         setOne.add(arr[i])
+                        for(var k=0;k<prev1.length;k++){
+                            for(var l=0;l<prev2.length;l++){
+                                if(prev1[k]==prev2[l])
+                                    setOne.delete(prev1[k]);
+                            }
+                        }
+                    }
+                }
+            }
+            return setOne;
+        }
+        const arr1Ex = [2,3,1,0,4,5];
+        const arr2Ex = [1,2,3,4,6,7,8,9,10];
+        console.log(diffArray(joinArrays(arr1Ex,arr2Ex),arr1Ex,arr2Ex));
+
+    </script>
+</body>
+</html>

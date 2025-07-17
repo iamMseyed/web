@@ -1,0 +1,29 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imports/Exports</title>
+</head>
+
+<body>
+    <h4>Check console</h4>
+    <script type="module">    //use module
+        import {name,age,name1,age1} from "./export1.js";  // use {} for variable, "./fileName" for filename
+        import message from "./export2.js"; // use simple name for function obj, or obj
+        console.log(`
+            From export 1, name is ${name} and age is ${age}
+            name1 is ${name1} and age is ${age1};
+        `);
+        console.log(`
+            from export2, message is ${message}
+            Name is: ${message.anyName}
+            Age is ${message.anyAge}
+            Gender is ${message.anyGender}
+            Via Arrow function: ${message.arrowFun()} 
+            Via Normal function: ${message.simpleFun()} 
+        `);
+    </script>
+</body>
+</html>

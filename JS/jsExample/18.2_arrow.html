@@ -1,0 +1,70 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <h4>Check Console</h4>
+    <h1>JavaScript "this" simple function </h1>
+
+        <p>This example demonstrate that in a regular function, the "this" keyword represents different objects depending on how the function was called.</p>
+
+        <p>Click the button to execute the "hello" function again, and you will see that this time "this" represents the button object.</p>
+
+        <button id="btnS">Click Me!</button>
+
+        <p id="demoS"></p>
+
+    <h1>JavaScript "this" arrow function </h1>
+
+        <p>This example demonstrate that in Arrow Functions, the "this" keyword represents the object that owns the function, no matter who calls the function.</p>
+
+        <p>Click the button to execute the "hello" function again, and you will see that "this" still  represents the window object.</p>
+
+        <button id="btnA">Click Me!</button>
+
+        <p id="demoA"></p>
+
+
+    <script>
+        let simple = function simple(){
+            console.log('This is normal function');
+        };
+        simple();
+
+        let arrow = ()=>{
+            console.log('This is arrow function');
+        }
+        arrow();
+
+        console.warn('-- simple function --');
+        let hello = "";
+
+        hello = function() {
+        document.getElementById("demoS").innerHTML += this;
+        }
+
+        //The window object calls the function:
+        window.addEventListener("load1", hello);
+
+        //A button object calls the function:
+        document.getElementById("btnS").addEventListener("click", hello);
+
+
+        let helloo = "";
+
+        helloo = () => {
+        document.getElementById("demoA").innerHTML += this;
+        }
+
+        //The window object calls the function:
+        window.addEventListener("load2", helloo);
+
+        //A button object calls the function:
+        document.getElementById("btnA").addEventListener("click", helloo);
+    </script>
+</body>
+</html>
